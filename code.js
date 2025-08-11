@@ -4,7 +4,6 @@ let memory = document.querySelector('.memory');
 let firstNumber = '';
 let operator = '';
 let secondNumber = '';
-let resultShown = false;
 
 function updateDisplay() {
     if (!operator) {
@@ -25,8 +24,15 @@ document.querySelectorAll('.btn--num').forEach(button => {
 document.querySelectorAll('.btn--operator').forEach(button => {
   button.addEventListener('click', () => {
     if (!firstNumber) return;
-    operator = button.textContent;
-    updateDisplay();
+    else if(!operator) {
+      operator = button.textContent;
+      updateDisplay();
+    } else {
+      calculate();
+      renderCalculate();
+      operator = button.textContent;
+      updateDisplay();
+    }
   })
 })
 
@@ -34,14 +40,14 @@ function reset() {
     firstNumber = '';
     operator = '';
     secondNumber = '';
-    resultShown = false;
+    display.textContent = '';
     updateDisplay();
 }
 
 function calculate() {
   if (firstNumber && operator && secondNumber) {
-    let num1 = parseInt(firstNumber);
-    let num2 = parseInt(secondNumber);
+    let num1 = +firstNumber;
+    let num2 = +secondNumber;
     let res;
 
     switch(operator) {
@@ -52,15 +58,17 @@ function calculate() {
       case 'x^y' : res = numberInSelectedDegree(); break;
       case '÷': 
       if (num2 === 0) {
-        alert('На ноль делить нельзя')
-        res='';
-        reset(); break;
+        alert('На ноль делить нельзя');
+        res=''; break;
       } else(res = num1 / num2); break;
       default: return;
     }
     return res;
   }
-  else alert('Введите второе число')
+  else{
+    reset();
+    return null;
+  }
 }
 
 function renderCalculate() {
@@ -68,11 +76,10 @@ function renderCalculate() {
     operator = '';
     secondNumber = '';
     display.textContent = firstNumber;
-    resultShown = false;
 }
 
 function squareRoot() {
-  let val = parseInt(firstNumber);
+  let val = +firstNumber;
   if (val) {
     for (let i = 0; i <= val; i++) {
       if (i * i === val) {
@@ -86,7 +93,7 @@ function squareRoot() {
 }
 
 function threeSquareRoot() {
-  let val = parseInt(firstNumber);
+  let val = +firstNumber;
   if (val) {
     for (let i = 0; i <= val; i++) {
       if (i * i * i === val) {
@@ -136,7 +143,7 @@ function numberInSelectedDegree() {
     let num2 = +secondNumber;
     let res = 1;
 
-    for (let i  = 0; i <= num2; i ++) {
+    for (let i  = 0; i < num2; i ++) {
       res *= num1;
     }
     return res;
@@ -144,12 +151,19 @@ function numberInSelectedDegree() {
 
 function tenInSelectedDegree() {
   let number = +firstNumber;
-  let res = 10;
-
-  for(let i = 1; i < number; i++) {
-    res *= 10;
+  if (number === 0) {
+    firstNumber = '0';
+  } else if (number > 0 && Number.isInteger(number)) {
+    let res = 10;
+    for (let i = 1; i < number; i++) {
+      res *= 10;
+    }
+    firstNumber = res.toString();
+  } else {
+    alert('Введите целое неотрицательное число');
+    reset();
+    return;
   }
-  firstNumber = res;
   updateDisplay();
 }
 
@@ -175,15 +189,51 @@ function resetMemory() {
 }
 
 function displayMemory() {
-    firstNumber= memory.textContent;
+  if (operator) {
+    if (operator === '%' && +memory.textContent === 0) {
+      alert('Делить на ноль нельзя');
+      resetMemory();
+      return;
+    }
+    secondNumber = +memory.textContent;
+    calculate();
+    renderCalculate();
     resetMemory();
+  } else {
+    firstNumber = +memory.textContent;
     updateDisplay();
+    resetMemory();
+  }
 }
+
 function minusNumberInMemory() {
     memory.textContent = `${memory.textContent - firstNumber}`;
 }
+
 function plusNumberInMemory() {
     memory.textContent = `${(+memory.textContent) + (+firstNumber)}`;
+}
+
+function toggleSign() {
+  if (!operator) {
+    if (firstNumber) {
+      if (firstNumber.startsWith('-')) {
+        firstNumber = firstNumber.slice(1);
+      } else {
+        firstNumber = '-' + firstNumber;
+      }
+      updateDisplay();
+    }
+  } else {
+    if (secondNumber) {
+      if (secondNumber.startsWith('-')) {
+        secondNumber = secondNumber.slice(1);
+      } else {
+        secondNumber = '-' + secondNumber;
+      }
+      updateDisplay();
+    }
+  }
 }
 
 updateDisplay()
