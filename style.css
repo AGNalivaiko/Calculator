@@ -5,32 +5,63 @@
 }
 
 .container {
-    border: 1px solid black;
+    border: 2px solid black;
     height: 60vh;
     width: 35%;
     margin: 20vh auto;
     background-color: rgb(72, 72, 72);
     color: white;
+    display: flex;
+    flex-direction: column;
 }
 
-.output {
+.display__wraper {
+    border: 1px solid yellow;
+    display: flex;
     height: 30%;
+}
+
+.display__wraper-previosOperation {
+    border: 1px solid orange;
+    width: 40%;
+    min-height: 100px;
+    min-width: 100px;
+}
+
+.display__wraper-currentOperation {
+    border: 1px solid red;
+    width: 60%;
+}
+
+.memory {
+    border: 2px solid green;
+    height: 40%;
+    display: flex;
+    justify-content: end;
+    padding: 2%;
+    opacity: 0.5;
+    font-size: 1.5rem;
+}
+
+.display {
+    border: 2px solid purple;
+    height: 60%;
     display: flex;
     align-items: end;
     justify-content: end;
-    font-size: 5rem;
-    padding: 1vh 1vw;
-    font-weight: bold;
+    padding: 2%;
+    font-size: 1.5rem;
 }
 
 .buttons__wraper {
     background-color: black;
+    height: 70%;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(5, 8.4vh);
+    grid-template-rows: repeat(5, 8.25vh);
     grid-gap: 1px;
     grid-template-areas: 
-    'btn_MPlus btn_MMinus btn_MR btn_delete btn_changeSybol btn_persentage btn_division'
+    'btn_MPlus btn_MMinus btn_MR btn_saveInMemory btn_changeSybol btn_persentage btn_division'
     'btn_MC btn_nuberPowNumber btn_nuberPowTwo btn_7 btn_8 btn_9 btn_multiplication'
     'btn_nuberPowThree btn_tenPowNumber btn_number_x btn_4 btn_5 btn_6 btn_minus'
     'btn_root btn_rootTwoOfNumber btn_rootThreeOfNumber btn_1 btn_2 btn_3 btn_summ'
@@ -41,9 +72,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5rem;
+    font-size: 1.5em;
     background-color: grey;
     user-select: none;
+
 }
 .btn:hover{
     cursor: pointer;
@@ -57,7 +89,7 @@
 .btn_MPlus {grid-area: btn_MPlus;}
 .btn_MMinus  {grid-area: btn_MMinus;}
 .btn_MR  {grid-area: btn_MR;}
-.btn_delete  {grid-area: btn_delete;}
+.btn_saveInMemory  {grid-area: btn_saveInMemory;}
 .btn_changeSybol  {grid-area: btn_changeSybol;}
 .btn_persentage  {grid-area: btn_persentage;}
 .btn_division  {grid-area: btn_division;}

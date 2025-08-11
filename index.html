@@ -8,41 +8,47 @@
 </head>
 <body>
     <div class="container">
-        <div class="output">1111111</div>
+        <div class="display__wraper">
+            <div class="display__wraper-previosOperation"></div>
+            <div class="display__wraper-currentOperation">
+                <div class="memory"></div>
+                <div class="display"></div>
+            </div>
+        </div>      
         <div class="buttons__wraper">
-            <div class="btn btn_1 btn-lightGrey">1</div>
-            <div class="btn btn_2 btn-lightGrey">2</div>
-            <div class="btn btn_3 btn-lightGrey">3</div>
-            <div class="btn btn_4 btn-lightGrey">4</div>
-            <div class="btn btn_5 btn-lightGrey">5</div>
-            <div class="btn btn_6 btn-lightGrey">6</div>
-            <div class="btn btn_7 btn-lightGrey">7</div>
-            <div class="btn btn_8 btn-lightGrey">8</div>
-            <div class="btn btn_9 btn-lightGrey">9</div>
-            <div class="btn btn_0 btn-lightGrey">0</div>
-            <div class="btn btn_comma btn-lightGrey">,</div>
-            <div class="btn btn_multiplication btn-orange">x</div>
-            <div class="btn btn_summ btn-orange">+</div>
-            <div class="btn btn_minus btn-orange">-</div>
-            <div class="btn btn_division btn-orange">÷</div>
-            <div class="btn btn_equal btn-orange">=</div>
+            <div class="btn btn--num btn_1 btn-lightGrey">1</div>
+            <div class="btn btn--num btn_2 btn-lightGrey">2</div>
+            <div class="btn btn--num btn_3 btn-lightGrey">3</div>
+            <div class="btn btn--num btn_4 btn-lightGrey">4</div>
+            <div class="btn btn--num btn_5 btn-lightGrey">5</div>
+            <div class="btn btn--num btn_6 btn-lightGrey">6</div>
+            <div class="btn btn--num btn_7 btn-lightGrey">7</div>
+            <div class="btn btn--num btn_8 btn-lightGrey">8</div>
+            <div class="btn btn--num btn_9 btn-lightGrey">9</div>
+            <div class="btn btn--num btn_0 btn-lightGrey">0</div>
+            <div class="btn btn_comma btn-lightGrey">.</div>
+            <div class="btn btn--operator btn_multiplication btn-orange">x</div>
+            <div class="btn btn--operator btn_summ btn-orange">+</div>
+            <div class="btn btn--operator btn_minus btn-orange">-</div>
+            <div class="btn btn--operator btn_division btn-orange">÷</div>
+            <div class="btn btn_equal btn-orange" onclick="renderCalculate()">=</div>
             <div class="btn btn_changeSybol">±</div>
-            <div class="btn btn_root">√x</div>
-            <div class="btn btn_MC">MC</div>
-            <div class="btn btn_MPlus">M+</div>
-            <div class="btn btn_MMinus">M-</div>
-            <div class="btn btn_MR">MR</div>
-            <div class="btn btn_delete">Del</div>
-            <div class="btn btn_persentage">%</div>
-            <div class="btn btn_factorial">X!</div>
-            <div class="btn btn_nuberPowTwo">x²</div>
-            <div class="btn btn_nuberPowThree">x³</div>
-            <div class="btn btn_nuberPowNumber">x^y</div>
-            <div class="btn btn_number_x">⅟x</div>
-            <div class="btn btn_rootTwoOfNumber">2√x</div>
-            <div class="btn btn_rootThreeOfNumber">3√x</div>
-            <div class="btn btn_tenPowNumber">10^x</div>
-            <div class="btn btn_reset">C</div>
+            <div class="btn btn_root" onclick="squareRoot()">√x</div>
+            <div class="btn btn_MC" onclick = 'resetMemory()'>MC</div>
+            <div class="btn btn_MPlus" onclick="plusNumberInMemory()">M+</div>
+            <div class="btn btn_MMinus" onclick="minusNumberInMemory()">M-</div>
+            <div class="btn btn_MR" onclick="displayMemory()">MR</div>
+            <div class="btn btn_saveInMemory" onclick="saveInMemory()">MS</div>
+            <div class="btn btn--operator btn_persentage">%</div>
+            <div class="btn btn_factorial" onclick="factorial()">X!</div>
+            <div class="btn btn_nuberPowTwo" onclick="secondDegree()">x²</div>
+            <div class="btn btn_nuberPowThree" onclick="thirdDegree()">x³</div>
+            <div class="btn btn--operator btn_nuberPowNumber">x^y</div>
+            <div class="btn btn_number_x" onclick="negativeDigree()">⅟x</div>
+            <div class="btn btn_rootTwoOfNumber" onclick="squareRoot()">2√x</div>
+            <div class="btn btn_rootThreeOfNumber" onclick="threeSquareRoot()">3√x</div>
+            <div class="btn btn_tenPowNumber" onclick="tenInSelectedDegree()">10^x</div>
+            <div class="btn btn_reset" onclick="reset()">C</div>
         </div>
     </div>
     <script src="code.js"></script>

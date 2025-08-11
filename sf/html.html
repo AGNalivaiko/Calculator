@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Простой калькулятор</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    max-width: 320px;
+    margin: 40px auto;
+  }
+  #display {
+    width: 100%;
+    height: 40px;
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: right;
+    padding: 5px 10px;
+    box-sizing: border-box;
+  }
+  .buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+  button {
+    padding: 15px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  button.operator {
+    background-color: #f0ad4e;
+  }
+  button.equals {
+    background-color: #5cb85c;
+    color: white;
+    grid-column: span 4;
+  }
+  button.clear {
+    background-color: #d9534f;
+    color: white;
+  }
+</style>
+</head>
+<body>
+
+<input type="text" id="display" disabled placeholder="0" />
+
+<div class="buttons">
+  <button class="num">7</button>
+  <button class="num">8</button>
+  <button class="num">9</button>
+  <button class="operator">/</button>
+
+  <button class="num">4</button>
+  <button class="num">5</button>
+  <button class="num">6</button>
+  <button class="operator">*</button>
+
+  <button class="num">1</button>
+  <button class="num">2</button>
+  <button class="num">3</button>
+  <button class="operator">-</button>
+
+  <button class="num">0</button>
+  <button class="clear">C</button>
+  <button class="equals">=</button>
+  <button class="operator">+</button>
+</div>
+
+<script>
+  const display = document.getElementById('display');
+  let firstNumber = '';
+  let operator = '';
+  let secondNumber = '';
+  let resultShown = false;
+
+  function updateDisplay() {
+    if (!operator) {
+      display.value = firstNumber || '0';
+    } else {
+      display.value = firstNumber + ' ' + operator + ' ' + secondNumber;
+    }
+  }
+
+  document.querySelectorAll('button.num').forEach(button => {
+    button.addEventListener('click', () => {
+      if (resultShown) {
+        // Сброс после результата, чтобы начать заново
+        firstNumber = button.textContent;
+        operator = '';
+        secondNumber = '';
+        resultShown = false;
+      } else {
+        if (!operator) {
+          firstNumber += button.textContent;
+        } else {
+          secondNumber += button.textContent;
+        }
+      }
+      updateDisplay();
+    });
+  });
+
+  document.querySelectorAll('button.operator').forEach(button => {
+    button.addEventListener('click', () => {
+      if (!firstNumber) return; // нельзя ставить оператор без первого числа
+      if (secondNumber) {
+        // Если уже есть второе число, считаем текущий результат и ставим новый оператор
+        calculate();
+      }
+      operator = button.textContent;
+      resultShown = false;
+      updateDisplay();
+    });
+  });
+
+  document.querySelector('button.equals').addEventListener('click', () => {
+    if (firstNumber && operator && secondNumber) {
+      calculate();
+      resultShown = true;
+    }
+  });
+
+  document.querySelector('button.clear').addEventListener('click', () => {
+    firstNumber = '';
+    operator = '';
+    secondNumber = '';
+    resultShown = false;
+    updateDisplay();
+  });
+
+  function calculate() {
+    const num1 = parseFloat(firstNumber);
+    const num2 = parseFloat(secondNumber);
+    let res;
+
+    switch(operator) {
+      case '+': res = num1 + num2; break;
+      case '-': res = num1 - num2; break;
+      case '*': res = num1 * num2; break;
+      case '/': 
+        if (num2 === 0) {
+          alert('Ошибка: деление на 0!');
+          clearAll();
+          return;
+        }
+        res = num1 / num2;
+        break;
+      default: return;
+    }
+
+    firstNumber = res.toString();
+    operator = '';
+    secondNumber = '';
+    display.value = firstNumber;
+  }
+
+  function clearAll() {
+    firstNumber = '';
+    operator = '';
+    secondNumber = '';
+    resultShown = false;
+    updateDisplay();
+  }
+
+  updateDisplay();
+</script>
+
+</body>
+</html>
