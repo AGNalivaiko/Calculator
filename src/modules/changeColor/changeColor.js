@@ -2,10 +2,11 @@ const container = document.querySelector(".display__wraper");
 const btnWrapper = document.querySelector(".buttons__wraper ");
 const allButtons = document.querySelectorAll(".btn");
 
-function changedTheme(button) {
+function changeColor(button) {
   button.addEventListener("click", () => {
     container.classList.toggle("btn-whiteTheme");
     btnWrapper.classList.toggle("btn-whiteTheme");
+
     allButtons.forEach((btn) => {
       if (btn.classList.contains("btn--num")) {
         btn.classList.toggle("btn-whiteTheme");
@@ -24,4 +25,4 @@ function changedTheme(button) {
   });
 }
 
-export { changedTheme };
+export { changeColor };
