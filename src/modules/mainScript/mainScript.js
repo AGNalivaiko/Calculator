@@ -1,9 +1,11 @@
-import { Calculator } from "./Calculator/Calculator.js";
-import { initCalculatorEventListeners } from "./EventListener/eventListener.js";
+import { Calculator } from "../Calculator/Calculator.js";
+import { initCalculatorEventListeners } from "../EventListener/eventListener.js";
+import { changedTheme } from "../changeColor/changeColor.js";
 
 const display = document.querySelector(".display");
 const memory = document.querySelector(".memory");
 const history = document.querySelector(".display__wraper-previosOperation");
+const button = document.querySelector(".theme-toggle");
 
 const calculator = new Calculator(display, memory, history);
 
@@ -36,6 +38,6 @@ document.querySelectorAll(".btn--operator").forEach((button) => {
 
 initCalculatorEventListeners(calculator);
 
-calculator.updateDisplay();
+changedTheme(button);
 
-export { calculator };
+calculator.updateDisplay();

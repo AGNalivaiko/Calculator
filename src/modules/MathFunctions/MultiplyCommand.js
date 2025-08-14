@@ -1,13 +1,13 @@
 import { Command } from "./mainCommand.js";
 
 class MultiplyCommand extends Command {
-    constructor() {
-        super();
-    }
+  constructor(context, a, b) {
+    super(context, a, b);
+  }
 
-    execute() {
-        return this.a * this.b;
-    }
+  execute() {
+    return this.a * this.b;
+  }
 }
 
 export { MultiplyCommand };

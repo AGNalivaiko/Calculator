@@ -1,2 +1,2 @@
-import './modules/mainScript.js';
-// import './style.css';
+import "./modules/mainScript/mainScript.js";
+// import "./style.css";

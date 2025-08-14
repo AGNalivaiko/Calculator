@@ -1,16 +1,17 @@
-import {Command} from "./mainCommand.js";
-
+import { Command } from "./mainCommand.js";
 
 class SecondDegree extends Command {
-    constructor() { 
-        super(); 
-    }
+  constructor(context, a, b) {
+    super(context, a, b);
+  }
 
-    execute() {
-        if(this.a) {
-            return +this.a * +this.a
-        } else alert('Введите число');
+  execute() {
+    if (this.a) {
+      return +this.a * +this.a;
+    } else {
+      alert("Введите число");
     }
+  }
 }
 
-export {SecondDegree}
+export { SecondDegree };

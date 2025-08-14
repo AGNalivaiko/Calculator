@@ -1,11 +1,11 @@
-import { FactorialCommand } from "./MathFunctions/FactorialCommand.js";
-import { TenInSelectedDegree } from "./MathFunctions/TenInSelectedDegree.js";
-import { NegativeDigree } from "./MathFunctions/NegativeDigree.js";
-import { ToggleSign } from "./MathFunctions/ToggleSign.js";
-import { SecondDegree } from "./MathFunctions/SecondDegree.js";
-import { ThirdDegree } from "./MathFunctions/ThirdDegree.js";
-import { Sqrt } from "./MathFunctions/Sqrt.js";
-import { SqrtCbt } from "./MathFunctions/SqrtCbt.js";
+import { FactorialCommand } from "../MathFunctions/FactorialCommand.js";
+import { TenInSelectedDegree } from "../MathFunctions/TenInSelectedDegree.js";
+import { NegativeDigree } from "../MathFunctions/NegativeDigree.js";
+import { ToggleSign } from "../MathFunctions/ToggleSign.js";
+import { SecondDegree } from "../MathFunctions/SecondDegree.js";
+import { ThirdDegree } from "../MathFunctions/ThirdDegree.js";
+import { Sqrt } from "../MathFunctions/Sqrt.js";
+import { SqrtCbt } from "../MathFunctions/SqrtCbt.js";
 
 function initCalculatorEventListeners(calculator) {
   /// Вывод вычислений на экран
@@ -48,6 +48,16 @@ function initCalculatorEventListeners(calculator) {
     calculator.executeCommand(new ThirdDegree(calculator, calculator.firstNumber));
   });
 
+  // корень квадратный
+  document.querySelector(".btn_rootTwoOfNumber").addEventListener("click", () => {
+    calculator.executeCommand(new Sqrt(calculator));
+  });
+
+  // корень кубический
+  document.querySelector(".btn_rootThreeOfNumber").addEventListener("click", () => {
+    calculator.executeCommand(new SqrtCbt(calculator));
+  });
+
   // сохранение в памяти
   document.querySelector(".btn_saveInMemory").addEventListener("click", () => {
     calculator.memoryAdd();
@@ -71,16 +81,6 @@ function initCalculatorEventListeners(calculator) {
   // вывод памяти на рабочий экран
   document.querySelector(".btn_MR").addEventListener("click", () => {
     calculator.memoryInDisplay();
-  });
-
-  // корень квадратный
-  document.querySelector(".btn_rootTwoOfNumber").addEventListener("click", () => {
-    calculator.executeCommand(new Sqrt(calculator));
-  });
-
-  // корень кубический
-  document.querySelector(".btn_rootThreeOfNumber").addEventListener("click", () => {
-    calculator.executeCommand(new SqrtCbt(calculator));
   });
 }
 

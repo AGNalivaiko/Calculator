@@ -1,8 +1,8 @@
 import { Command } from "./mainCommand.js";
 
 class ToggleSign extends Command {
-  constructor() {
-    super();
+  constructor(context, a, b) {
+    super(context, a, b);
   }
 
   execute() {

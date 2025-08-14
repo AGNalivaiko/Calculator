@@ -1,14 +1,11 @@
-import {Command} from "./mainCommand.js";
+import { Command } from "./mainCommand.js";
 
+export class NegativeDigree extends Command {
+  constructor(context, a, b) {
+    super(context, a, b);
+  }
 
-class NegativeDigree extends Command {
-    constructor() { 
-        super(); 
-    }
-
-    execute() {  
-        return this.a ? `${1/+this.a}` : alert('Введите число');    
-    };
+  execute() {
+    return this.a ? `${1 / +this.a}` : alert("Введите число");
+  }
 }
-
-export {NegativeDigree}

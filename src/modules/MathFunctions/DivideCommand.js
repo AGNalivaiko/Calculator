@@ -1,18 +1,18 @@
-import {Command} from "./mainCommand.js";
+import { Command } from "./mainCommand.js";
 
 class DivideCommand extends Command {
-    constructor() {
-        super();
+  constructor(context, a, b) {
+    super(context, a, b);
+  }
+
+  execute() {
+    if (this.b === 0) {
+      alert("На ноль делить нельзя");
+      this.context.reset();
+      return "";
     }
-    
-    execute() {
-        if (this.b === 0) {
-            alert('На ноль делить нельзя');
-            this.context.reset();
-            return '';
-        }
-        return this.a / this.b;
-    }
+    return this.a / this.b;
+  }
 }
 
-export {DivideCommand}
+export { DivideCommand };

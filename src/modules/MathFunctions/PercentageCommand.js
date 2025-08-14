@@ -1,13 +1,13 @@
-import {Command} from "./mainCommand.js";
+import { Command } from "./mainCommand.js";
 
 class PercentageCommand extends Command {
-    constructor() {
-        super();
-    }
+  constructor(context, a, b) {
+    super(context, a, b);
+  }
 
-    execute() { 
-        return (this.a / this.b) * 100 
-    }
+  execute() {
+    return (this.a / this.b) * 100;
+  }
 }
 
-export {PercentageCommand}
+export { PercentageCommand };

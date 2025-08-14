@@ -12,6 +12,18 @@
     "btn_root btn_rootTwoOfNumber btn_rootThreeOfNumber btn_1 btn_2 btn_3 btn_summ"
     "btn_factorial btn_reset btn_reset btn_0  btn_0 btn_comma btn_equal";
 }
+.theme-toggle {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 5px 10px;
+  border: none;
+  background-color: #666;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+}
 
 .btn {
   display: flex;
@@ -32,6 +44,18 @@
 }
 .btn-lightGrey {
   background-color: rgb(163, 163, 163);
+}
+/*styles for white theme */
+.btn-whiteTheme {
+  background-color: #f8f8f8;
+  color: black;
+}
+.btn-navyBlue {
+  background-color: rgb(4, 4, 63);
+  color: white;
+}
+.btn-veryLightBlue {
+  background-color: #eef1f6;
 }
 
 /* First row */

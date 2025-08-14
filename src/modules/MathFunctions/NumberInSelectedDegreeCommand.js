@@ -1,21 +1,23 @@
-import {Command} from "./mainCommand.js";
+import { Command } from "./mainCommand.js";
 
 class NumberInSelectedDegreeCommand extends Command {
-    constructor() {
-        super();
-    }
+  constructor(context, a, b) {
+    super(context, a, b);
+  }
 
-    execute() {
-        let num1 = +this.a;
-        let num2 = +this.b;
-        let res = 1;
-        if (num1 > 0 && num2 > 0) {
-            for (let i = 0; i < num2; i++) {
-                res *= num1;
-            }
-            return res;
-        } else alert('Введите положительные числа')
+  execute() {
+    const num1 = +this.a;
+    const num2 = +this.b;
+    let res = 1;
+    if (num1 > 0 && num2 > 0) {
+      for (let i = 0; i < num2; i++) {
+        res *= num1;
+      }
+      return res;
+    } else {
+      alert("Введите положительные числа");
     }
+  }
 }
 
-export {NumberInSelectedDegreeCommand}
+export { NumberInSelectedDegreeCommand };

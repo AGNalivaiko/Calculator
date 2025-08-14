@@ -1,5 +1,10 @@
-import { AddCommand } from "./MathOperations/AddCommand.js";
-import { SubtractCommand } from "./MathOperations/SubtractCommand.js";
+import { AddCommand } from "../MathFunctions/AddCommand.js";
+import { SubtractCommand } from "../MathFunctions/SubtractCommand.js";
+import { MultiplyCommand } from "../MathFunctions/MultiplyCommand.js";
+import { PercentageCommand } from "../MathFunctions/PercentageCommand.js";
+import { NthRoot } from "../MathFunctions/NthRoot.js";
+import { NumberInSelectedDegreeCommand } from "../MathFunctions/NumberInSelectedDegreeCommand.js";
+import { DivideCommand } from "../MathFunctions/DivideCommand.js";
 
 class Calculator {
   constructor(display, memory, history) {
@@ -74,7 +79,7 @@ class Calculator {
   }
 
   executeCommand(command) {
-    let result = command.execute();
+    const result = command.execute();
     if (result !== undefined) {
       this.addToHistory(`${this.firstNumber} → ${result}`);
       this.firstNumber = result;
@@ -85,11 +90,11 @@ class Calculator {
   addToHistory(event) {
     this.historyList.push(event);
 
-    if (this.historyList.length > 10) this.historyList.shift();
+    if (this.historyList.length > 10) {
+      this.historyList.shift();
+    }
 
-    this.history.innerHTML = this.historyList
-      .map((item) => `<div>${item}</div>`)
-      .join("");
+    this.history.innerHTML = this.historyList.map((item) => `<div>${item}</div>`).join("");
   }
 
   /// == Память калькулятор ==

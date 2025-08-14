@@ -4,3 +4,5 @@ node_modules
 oldMainScript.js
 package-lock.json
 package.json
+.husky
+eslint.config.mjs
