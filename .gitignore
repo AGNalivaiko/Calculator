@@ -1,1 +1,6 @@
 oldCode.js
+.prettierrc
+node_modules
+oldMainScript.js
+package-lock.json
+package.json

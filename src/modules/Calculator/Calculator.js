@@ -1,14 +1,5 @@
-import {
-  AddCommand,
-  SubtractCommand,
-  MultiplyCommand,
-  DivideCommand,
-  PercentageCommand,
-  NumberInSelectedDegreeCommand,
-  NthRoot,
-} from "./MathClasses.js";
-
-import { calculator } from "../../mainScript.js";
+import { AddCommand } from "./MathOperations/AddCommand.js";
+import { SubtractCommand } from "./MathOperations/SubtractCommand.js";
 
 class Calculator {
   constructor(display, memory, history) {
@@ -105,10 +96,10 @@ class Calculator {
   memoryAdd() {
     if (!this.secondNumber && !this.operator) {
       this.memory.textContent = +this.firstNumber;
-      calculator.reset();
+      this.reset();
     } else {
       this.memory.textContent = this.calculate();
-      calculator.reset();
+      this.reset();
     }
   }
 
@@ -141,4 +132,4 @@ class Calculator {
   }
 }
 
-export default Calculator;
+export { Calculator };
