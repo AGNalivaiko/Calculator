@@ -4,7 +4,7 @@ beforeAll(() => {
   global.alert = jest.fn();
 });
 
-describe(SecondDegree, () => {
+describe("SecondDegree", () => {
   test("Работа с положительными числами", () => {
     const context = {};
     expect(new SecondDegree(context, 2).execute()).toBe(4);

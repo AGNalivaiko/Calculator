@@ -4,7 +4,7 @@ beforeAll(() => {
   global.alert = jest.fn();
 });
 
-describe(DivideCommand, () => {
+describe("DivideCommand", () => {
   test("Провека деления", () => {
     const context = {};
     expect(new DivideCommand(context, 9, 3).execute()).toBe(3);

@@ -1,7 +1,6 @@
 import { AddCommand } from "./AddCommand.js";
 
-var cm;
-describe(AddCommand, () => {
+describe("AddCommand", () => {
   test("Должен правильно складывать два числа", () => {
     const context = {};
     const command = new AddCommand(context, 2, 3);

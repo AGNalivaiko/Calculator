@@ -8,3 +8,5 @@ package.json
 eslint.config.mjs
 jest.config.js
 babel.config.js
+webpack.config.cjs
+dist

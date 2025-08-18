@@ -1,6 +1,6 @@
 import { MultiplyCommand } from "./MultiplyCommand.js";
 
-describe(MultiplyCommand, () => {
+describe("MultiplyCommand", () => {
   test("Должен умножать цифры", () => {
     const context = {};
     expect(new MultiplyCommand(context, 3, 3).execute()).toBe(9);

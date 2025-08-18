@@ -1,6 +1,6 @@
 import absFunc from "./abs.js";
 
-describe(absFunc, () => {
+describe("absFunc", () => {
   test("Отрицательное значение", () => {
     expect(absFunc(-2)).toBe(2);
   });

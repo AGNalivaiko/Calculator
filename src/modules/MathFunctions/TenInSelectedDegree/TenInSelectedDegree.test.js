@@ -4,7 +4,7 @@ beforeAll(() => {
   global.alert = jest.fn();
 });
 
-describe(TenInSelectedDegree, () => {
+describe("TenInSelectedDegree", () => {
   test("Работает с целым неотрицательным числом", () => {
     const context = {};
     expect(new TenInSelectedDegree(context, 2).execute()).toBe(100);

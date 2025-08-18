@@ -3,7 +3,7 @@ beforeAll(() => {
   global.alert = jest.fn();
 });
 
-describe(NegativeDigree, () => {
+describe("NegativeDigree", () => {
   test("Проверка функции", () => {
     const context = {};
     expect(new NegativeDigree(context, 2).execute()).toBe("0.5");

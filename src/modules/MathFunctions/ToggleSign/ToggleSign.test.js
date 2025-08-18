@@ -1,6 +1,6 @@
 import { ToggleSign } from "./ToggleSign.js";
 
-describe(ToggleSign, () => {
+describe("ToggleSign", () => {
   test("меняет знак первого числа, если оператор не установлен", () => {
     const context = {
       firstNumber: 3,

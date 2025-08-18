@@ -1,6 +1,6 @@
 import { SubtractCommand } from "./SubtractCommand.js";
 
-describe(SubtractCommand, () => {
+describe("SubtractCommand", () => {
   test("Проверка работы на вычитание", () => {
     const context = {};
     expect(new SubtractCommand(context, 6, 3).execute()).toBe(3);
