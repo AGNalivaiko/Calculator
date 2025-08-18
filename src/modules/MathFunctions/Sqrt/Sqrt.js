@@ -1,5 +1,5 @@
-import { Command } from "./mainCommand.js";
-import absFunc from "../MathFunctions/abs.js";
+import { Command } from "../mainCommand/mainCommand.js";
+import absFunc from "../absFunc/abs.js";
 
 class Sqrt extends Command {
   constructor(context, a, b) {

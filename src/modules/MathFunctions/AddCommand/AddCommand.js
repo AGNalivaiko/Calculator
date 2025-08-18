@@ -1,4 +1,4 @@
-import { Command } from "./mainCommand.js";
+import { Command } from "../mainCommand/mainCommand.js";
 
 class AddCommand extends Command {
   constructor(context, a, b) {

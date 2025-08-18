@@ -1,4 +1,4 @@
-import { Command } from "./mainCommand.js";
+import { Command } from "../mainCommand/mainCommand.js";
 
 class NumberInSelectedDegreeCommand extends Command {
   constructor(context, a, b) {

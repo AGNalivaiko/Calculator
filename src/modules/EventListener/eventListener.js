@@ -1,11 +1,11 @@
-import { FactorialCommand } from "../MathFunctions/FactorialCommand.js";
-import { TenInSelectedDegree } from "../MathFunctions/TenInSelectedDegree.js";
-import { NegativeDigree } from "../MathFunctions/NegativeDigree.js";
-import { ToggleSign } from "../MathFunctions/ToggleSign.js";
-import { SecondDegree } from "../MathFunctions/SecondDegree.js";
-import { ThirdDegree } from "../MathFunctions/ThirdDegree.js";
-import { Sqrt } from "../MathFunctions/Sqrt.js";
-import { SqrtCbt } from "../MathFunctions/SqrtCbt.js";
+import { FactorialCommand } from "../MathFunctions/FactorialCommand/FactorialCommand.js";
+import { TenInSelectedDegree } from "../MathFunctions/TenInSelectedDegree/TenInSelectedDegree.js";
+import { NegativeDigree } from "../MathFunctions/NegativeDigree/NegativeDigree.js";
+import { ToggleSign } from "../MathFunctions/ToggleSign/ToggleSign.js";
+import { SecondDegree } from "../MathFunctions/SecondDegree/SecondDegree.js";
+import { ThirdDegree } from "../MathFunctions/ThirdDegree/ThirdDegree.js";
+import { Sqrt } from "../MathFunctions/Sqrt/Sqrt.js";
+import { SqrtCbt } from "../MathFunctions/SqrtCbt/SqrtCbt.js";
 
 function initCalculatorEventListeners(calculator) {
   /// Вывод вычислений на экран

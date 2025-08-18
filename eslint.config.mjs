@@ -17,7 +17,6 @@ export default defineConfig([
       "brace-style": ["error", "1tbs"],
       "no-unreachable": "error",
       "no-self-assign": "error",
-      "no-use-before-define": "error",
       "new-cap": "error",
       "prefer-const": "error",
       "no-useless-return": "error",
