@@ -1,4 +1,4 @@
-import { Command } from "../mainCommand/mainCommand.js";
+import { Command } from "@main/mainCommand";
 
 class SubtractCommand extends Command {
   constructor(context, a, b) {

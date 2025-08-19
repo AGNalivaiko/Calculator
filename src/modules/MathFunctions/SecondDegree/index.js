@@ -1,0 +1,1 @@
+export { SecondDegree } from "./SecondDegree";

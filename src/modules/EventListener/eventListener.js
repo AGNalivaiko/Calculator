@@ -1,11 +1,13 @@
-import { FactorialCommand } from "../MathFunctions/FactorialCommand/FactorialCommand.js";
-import { TenInSelectedDegree } from "../MathFunctions/TenInSelectedDegree/TenInSelectedDegree.js";
-import { NegativeDigree } from "../MathFunctions/NegativeDigree/NegativeDigree.js";
-import { ToggleSign } from "../MathFunctions/ToggleSign/ToggleSign.js";
-import { SecondDegree } from "../MathFunctions/SecondDegree/SecondDegree.js";
-import { ThirdDegree } from "../MathFunctions/ThirdDegree/ThirdDegree.js";
-import { Sqrt } from "../MathFunctions/Sqrt/Sqrt.js";
-import { SqrtCbt } from "../MathFunctions/SqrtCbt/SqrtCbt.js";
+import {
+  FactorialCommand,
+  TenInSelectedDegree,
+  NegativeDigree,
+  ToggleSign,
+  SecondDegree,
+  ThirdDegree,
+  Sqrt,
+  SqrtCbt,
+} from "@math/MathFunctions";
 
 function initCalculatorEventListeners(calculator) {
   /// Вывод вычислений на экран
@@ -20,17 +22,17 @@ function initCalculatorEventListeners(calculator) {
 
   // Факториал числа
   document.querySelector(".btn_factorial").addEventListener("click", () => {
-    calculator.executeCommand(new FactorialCommand(calculator, +calculator.firstNumber));
+    calculator.executeCommand(new FactorialCommand(calculator, calculator.firstNumber));
   });
 
   // Возведение 10 в указанную степень
   document.querySelector(".btn_tenPowNumber").addEventListener("click", () => {
-    calculator.executeCommand(new TenInSelectedDegree(calculator, +calculator.firstNumber));
+    calculator.executeCommand(new TenInSelectedDegree(calculator, calculator.firstNumber));
   });
 
   // Отрицательная степень, 1/x
   document.querySelector(".btn_number_x").addEventListener("click", () => {
-    calculator.executeCommand(new NegativeDigree(calculator, +calculator.firstNumber));
+    calculator.executeCommand(new NegativeDigree(calculator, calculator.firstNumber));
   });
 
   // Смена знака

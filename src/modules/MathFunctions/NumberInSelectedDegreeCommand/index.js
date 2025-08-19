@@ -1,0 +1,1 @@
+export { NumberInSelectedDegreeCommand } from "./NumberInSelectedDegreeCommand";

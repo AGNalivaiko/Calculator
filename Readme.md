@@ -6,7 +6,9 @@
 
 2. ## **Инструкции по билду приложения**
    - Клонируйте репозиторий https://github.com/AGNalivaiko/Calculator.git себе в IDE (для примера VS Code);
-   - Откройте в браузере (используйте расширение Live Server для VS CODE);
+   - Установите зависимости npm install;
+   - Комипилируем файлы с помощью webpack npm run build;
+   - Запуск приложения npm run start;
 
 3. ## **Структура папок**
 

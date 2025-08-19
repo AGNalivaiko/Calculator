@@ -1,4 +1,4 @@
-import { Command } from "../mainCommand/mainCommand.js";
+import { Command } from "@main/mainCommand";
 import absFunc from "../absFunc/abs.js";
 
 class Sqrt extends Command {

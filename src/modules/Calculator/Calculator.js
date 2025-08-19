@@ -1,10 +1,12 @@
-import { AddCommand } from "../MathFunctions/AddCommand/AddCommand.js";
-import { SubtractCommand } from "../MathFunctions/SubtractCommand/SubtractCommand.js";
-import { MultiplyCommand } from "../MathFunctions//MultiplyCommand/MultiplyCommand.js";
-import { PercentageCommand } from "../MathFunctions/PercentageCommand/PercentageCommand.js";
-import { NthRoot } from "../MathFunctions/NthRoot/NthRoot.js";
-import { NumberInSelectedDegreeCommand } from "../MathFunctions/NumberInSelectedDegreeCommand/NumberInSelectedDegreeCommand.js";
-import { DivideCommand } from "../MathFunctions/DivideCommand/DivideCommand.js";
+import {
+  AddCommand,
+  SubtractCommand,
+  MultiplyCommand,
+  PercentageCommand,
+  NthRoot,
+  NumberInSelectedDegreeCommand,
+  DivideCommand,
+} from "@math/MathFunctions";
 
 class Calculator {
   constructor(display, memory, history) {

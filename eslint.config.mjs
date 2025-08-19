@@ -6,7 +6,7 @@ import eslintPluginJest from "eslint-plugin-jest";
 export default defineConfig([
   {
     files: ["**/*.{js,mjs,cjs}"],
-    ignores: ["dist/**", "node_modules/**"],
+    ignores: ["built/**", "node_modules/**"],
     plugins: {
       js,
       jest: eslintPluginJest,
@@ -21,7 +21,6 @@ export default defineConfig([
     rules: {
       ...js.configs.recommended.rules,
       ...eslintPluginJest.configs.recommended.rules,
-      semi: ["error", "always"],
       "eol-last": ["error", "always"],
       curly: "error",
       "comma-dangle": ["error", "only-multiline"],

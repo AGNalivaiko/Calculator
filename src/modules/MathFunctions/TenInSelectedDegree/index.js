@@ -1,0 +1,1 @@
+export { TenInSelectedDegree } from "./TenInSelectedDegree";

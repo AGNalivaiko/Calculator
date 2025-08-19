@@ -1,6 +1,5 @@
-import { Calculator } from "../Calculator/Calculator.js";
-import { initCalculatorEventListeners } from "../EventListener/eventListener.js";
-import { changeColor } from "../changeColor/changeColor.js";
+import { Calculator, initCalculatorEventListeners, themeSwitcher } from "./modules";
+import "./style.css";
 
 const display = document.querySelector(".display");
 const memory = document.querySelector(".memory");
@@ -38,6 +37,6 @@ document.querySelectorAll(".btn--operator").forEach((button) => {
 
 initCalculatorEventListeners(calculator);
 
-changeColor(button);
+themeSwitcher(button);
 
 calculator.updateDisplay();

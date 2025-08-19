@@ -2,7 +2,7 @@ const container = document.querySelector(".display__wraper");
 const btnWrapper = document.querySelector(".buttons__wraper ");
 const allButtons = document.querySelectorAll(".btn");
 
-function changeColor(button) {
+function themeSwitcher(button) {
   button.addEventListener("click", () => {
     container.classList.toggle("btn-whiteTheme");
     btnWrapper.classList.toggle("btn-whiteTheme");
@@ -25,4 +25,4 @@ function changeColor(button) {
   });
 }
 
-export { changeColor };
+export { themeSwitcher };
