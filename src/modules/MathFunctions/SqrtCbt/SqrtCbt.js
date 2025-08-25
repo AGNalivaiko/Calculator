@@ -1,4 +1,4 @@
-import { Command } from "@main/mainCommand";
+import { Command } from "../mainCommand";
 import absFunc from "../absFunc/abs.js";
 
 class SqrtCbt extends Command {

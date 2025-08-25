@@ -1,0 +1,17 @@
+export const CONSTANTS = {
+  btn_equal: ".btn_equal",
+  btn_reset: ".btn_reset",
+  btn_factorial: ".btn_factorial",
+  btn_tenPowNumber: ".btn_tenPowNumber",
+  btn_number_x: ".btn_number_x",
+  btn_changeSybol: ".btn_changeSybol",
+  btn_nuberPowTwo: ".btn_nuberPowTwo",
+  btn_nuberPowThree: ".btn_nuberPowThree",
+  btn_rootTwoOfNumber: ".btn_rootTwoOfNumber",
+  btn_rootThreeOfNumber: ".btn_rootThreeOfNumber",
+  btn_saveInMemory: ".btn_saveInMemory",
+  btn_MC: ".btn_MC",
+  btn_MPlus: ".btn_MPlus",
+  btn_MMinus: ".btn_MMinus",
+  btn_MR: ".btn_MR",
+};

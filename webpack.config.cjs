@@ -5,14 +5,14 @@ module.exports = {
   entry: "./src/mainScript.js", // точка входа
   output: {
     filename: "bundle.js", // имя итогового файла
-    path: path.resolve(__dirname, "built"), // папка для сборки
+    path: path.resolve(__dirname, "build"), // папка для сборки
     clean: true, // очищать папку built перед сборкой
   },
   mode: "development", // режим: development или production
   resolve: {
     alias: {
-      "@math": path.resolve(__dirname, "src/modules"), // путь к папке или файлу
-      "@main": path.resolve(__dirname, "src/modules/MathFunctions/mainCommand"),
+      "@mathFunctions": path.resolve(__dirname, "src/modules/MathFunctions"),
+      "@constants": path.resolve(__dirname, "src/modules/CONSTANTS/CONSTANTS.js"), // путь к папке или файлу
     },
     extensions: [".js", ".jsx", ".json"], // расширения, которые Webpack будет подставлять автоматически
   },

@@ -1,4 +1,4 @@
-import { Command } from "@main/mainCommand";
+import { Command } from "../mainCommand";
 
 export class NegativeDigree extends Command {
   constructor(context, a, b) {

@@ -1,4 +1,4 @@
-import { Command } from "@main/mainCommand";
+import { Command } from "../mainCommand";
 
 class DivideCommand extends Command {
   constructor(context, a, b) {

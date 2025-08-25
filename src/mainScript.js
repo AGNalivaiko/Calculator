@@ -1,5 +1,5 @@
 import { Calculator, initCalculatorEventListeners, themeSwitcher } from "./modules";
-import "./style.css";
+import "./styles/style.css";
 
 const display = document.querySelector(".display");
 const memory = document.querySelector(".memory");

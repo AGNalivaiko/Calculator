@@ -6,7 +6,7 @@ import {
   NthRoot,
   NumberInSelectedDegreeCommand,
   DivideCommand,
-} from "@math/MathFunctions";
+} from "@mathFunctions";
 
 class Calculator {
   constructor(display, memory, history) {
@@ -115,7 +115,7 @@ class Calculator {
   }
 
   memoryPlus() {
-    this.memory.textContent = `${+this.memory.textContent + +this.firstNumber}`;
+    this.memory.textContent = `${Number(this.memory.textContent) + +this.firstNumber}`;
   }
 
   memoryMinus() {
